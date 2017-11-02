@@ -1,4 +1,9 @@
 function showAn() {
+    if (!window.jQuery) {
+        script = document.createElement('script');
+        script.src = ' https://code.jquery.com/jquery-3.2.1.min.js';
+        document.body.appendChild(script);
+    }
     var questions = $('[colspan="3"]');
     var img;
     var text;
@@ -12,4 +17,7 @@ function showAn() {
         grandparent.insertBefore(newimg, questions[i].parentElement);
 
     }
+    return 0;
 }
+
+showAn();
