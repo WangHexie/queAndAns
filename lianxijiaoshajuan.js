@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         在线练习交啥试卷
 // @namespace    http://tampermonkey.net/
-// @version      0.111
+// @version      0.211
 // @description  shows how to use babel compiler
 // @author       You
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
@@ -16,8 +16,9 @@ var inline_src = (<><![CDATA[
     /* jshint esnext: false */
     /* jshint esversion: 6 */
 
+       var d2 = $('[name=mainFrame]').contents();
 
-       var questions=$('[colspan="3"]');
+       var questions=$('[colspan="3"]', d2);
        var img;
        var text;
        for (i=0; i<questions.length; i++) {
